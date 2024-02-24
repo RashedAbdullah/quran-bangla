@@ -1,0 +1,23 @@
+.switch {
+  width: 55px;
+  border-radius: 100px;
+  padding: 5px;
+  display: flex;
+  cursor: pointer;
+}
+
+.switch.on {
+  background-color: #64ccc5;
+}
+
+.switch.off {
+  background-color: #dddddd;
+}
+
+.switch div {
+  width: 25px;
+  height: 25px;
+  background-color: #ffffff;
+  border-radius: 200px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.02);
+}

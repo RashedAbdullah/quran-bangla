@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* বাংলা */
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap");
+
+@font-face {
+  font-family: hafs;
+  src: url(./assets/fonts/KFGQPC.otf);
+}
+
+@font-face {
+  font-family: anotherHafs;
+  src: url(./assets/fonts/UthmanicHafs1Ver18.woff2);
+}
+
+@font-face {
+  font-family: me_quran;
+  src: url("./assets//fonts/me_quran.ttf");
+}
+
+@font-face {
+  font-family: QCF_BSML;
+  src: url("./assets/fonts/QCF_BSML.ttf");
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active {
+  color: aqua;
+}
