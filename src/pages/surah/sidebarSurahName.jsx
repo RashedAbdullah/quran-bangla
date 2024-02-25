@@ -31,7 +31,7 @@ const SideBarSurahNames = () => {
           isShowSidebar
             ? "left-0"
             : " lg:translate-x-[-175px] translate-x-[-175px]"
-        } pt-5 rounded-l fixed lg:h-screen h-[90vh] left-0 w-62 overflow-auto transition duration-300 px-3 lg:pt-20`}
+        } pt-5 rounded-l fixed lg:h-screen h-[88vh] left-0 w-62 overflow-auto transition duration-300 px-3 lg:pt-20`}
       >
         {" "}
         <div className=" fixed left-[170px] text-textWhite">
