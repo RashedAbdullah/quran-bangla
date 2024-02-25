@@ -12,6 +12,7 @@ import { getEngToBnNumber } from "../../customHooks/getEngToArNumber";
 import { bnSurahNames } from "../../banglasurahNames/bnSurahNames";
 import Loading from "../loading/loading";
 import { getHideSidebar } from "../../localStorage/sidebar";
+import ScrollAnimation from "../../scrollAnimation/ScrollAnimation";
 
 const SideBarSurahNames = () => {
   const navigate = useNavigate();
@@ -73,6 +74,7 @@ const SideBarSurahNames = () => {
         </div>
       </div>
       {navigation.state === "loading" ? <Loading /> : <Outlet />}
+      <ScrollAnimation/>
     </div>
   );
 };
