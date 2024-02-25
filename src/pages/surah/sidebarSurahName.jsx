@@ -2,15 +2,20 @@ import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { NavLink, Outlet, useLoaderData } from "react-router-dom";
+import {
+  NavLink,
+  Outlet,
+  useLoaderData,
+  useNavigation,
+} from "react-router-dom";
 import { motion } from "framer-motion";
 import { getEngToBnNumber } from "../../customHooks/getEngToArNumber";
 import { bnSurahNames } from "../../banglasurahNames/bnSurahNames";
+import Loading from "../loading/loading";
 
 const SideBarSurahNames = () => {
-  console.log(bnSurahNames[0].name);
+  const navigation = useNavigation();
   const data = useLoaderData();
-  // console.log(data[0].id);
   const [isShowSidebar, setIsShowSidebar] = useState(true);
 
   return (
@@ -26,7 +31,7 @@ const SideBarSurahNames = () => {
           isShowSidebar
             ? "left-0"
             : " lg:translate-x-[-175px] translate-x-[-175px]"
-        } pt-5 rounded-l fixed h-screen left-0 w-62 overflow-auto transition duration-300 px-3 lg:pt-20`}
+        } pt-5 rounded-l fixed lg:h-screen h-[96vw] left-0 w-62 overflow-auto transition duration-300 px-3 lg:pt-20`}
       >
         {" "}
         <div className=" fixed left-[170px] text-textWhite">
@@ -61,7 +66,7 @@ const SideBarSurahNames = () => {
           ))}
         </div>
       </div>
-      <Outlet />
+      {navigation.state === "loading" ? <Loading /> : <Outlet />}
     </motion.div>
   );
 };
