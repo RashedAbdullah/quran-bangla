@@ -3,9 +3,9 @@ import { FiSearch } from "react-icons/fi";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import {
-  NavLink,
   Outlet,
   useLoaderData,
+  useNavigate,
   useNavigation,
 } from "react-router-dom";
 import { getEngToBnNumber } from "../../customHooks/getEngToArNumber";
@@ -14,12 +14,18 @@ import Loading from "../loading/loading";
 import { getHideSidebar } from "../../localStorage/sidebar";
 
 const SideBarSurahNames = () => {
+  const navigate = useNavigate();
   const navigation = useNavigation();
   const data = useLoaderData();
   const [isShowSidebar, setIsShowSidebar] = useState(getHideSidebar());
   useEffect(() => {
     localStorage.setItem("isHide", JSON.stringify(isShowSidebar));
   }, [isShowSidebar]);
+
+  const handleGoingToSurah = (id) => {
+    navigate(`/singleSurah/${id}`);
+    setIsShowSidebar(false);
+  };
 
   return (
     <div className=" min-h-screen lg:pt-2 pt-16">
@@ -53,14 +59,16 @@ const SideBarSurahNames = () => {
         </form>
         <div className=" text-textWhite pt-24 lg:pt-10 pr-3">
           {data.map((name) => (
-            <NavLink key={name.id} to={`/singleSurah/${name.id}`}>
-              <div className="flex items-center gap-5 py-2 px-1 border-b border-secondary hover:bg-primaryHover transition">
+            <button
+              className="block py-2 px-1 border-b border-secondary hover:bg-primaryHover transition"
+              key={name.id}
+              onClick={() => handleGoingToSurah(name.id)}
+            >
+              <div className="flex items-center gap-5 ">
                 <p className="text-1xl">{getEngToBnNumber(name.id)}</p>
-                <div>
-                  <h3 className="text-1xl">{bnSurahNames[name.id]?.name}</h3>
-                </div>
+                <h3 className="text-1xl">{bnSurahNames[name.id]?.name}</h3>
               </div>
-            </NavLink>
+            </button>
           ))}
         </div>
       </div>

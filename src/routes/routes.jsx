@@ -3,44 +3,25 @@ import Home from "../pages/home/home";
 import SingleSurah from "../pages/surah/signgleSurah";
 import SideBarSurahNames from "../pages/surah/sidebarSurahName";
 import Layout from "../layouts/layout";
-import ThemeProvider from "../contexts/themeProvider";
 import SignIn from "./../auth/signin";
 import SignUp from "../auth/signup";
 import UserProfile from "../auth/userProfile";
 import Reset from "./../auth/reset";
-import About from "./../pages/about/about";
 import PrivateRoutes from "./privateRoutes";
-import { AnimatePresence } from "framer-motion";
 import SignleSurahBn from "./../pages/surah/singleSurahBn";
-
-const lang = "bn";
 
 const routes = createBrowserRouter([
   {
-    element: (
-      <ThemeProvider>
-        <AnimatePresence mode="wait">
-          <Layout />
-        </AnimatePresence>
-      </ThemeProvider>
-    ),
+    element: <Layout />,
     errorElement: <h2>404 NOT FOUND</h2>,
     children: [
       {
         path: "/",
-        element: (
-          <AnimatePresence mode="wait">
-            <Home />
-          </AnimatePresence>
-        ),
+        element: <Home />,
       },
       {
         path: "/singleSurah",
-        element: (
-          <AnimatePresence>
-            <SideBarSurahNames />
-          </AnimatePresence>
-        ),
+        element: <SideBarSurahNames />,
         loader: () =>
           fetch(
             `https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/quran_bn.json`
@@ -48,14 +29,11 @@ const routes = createBrowserRouter([
         children: [
           {
             path: "/singleSurah/:id",
-            element: (
-              <AnimatePresence mode="wait">
-                <SingleSurah />
-              </AnimatePresence>
-            ),
+            element: <SingleSurah />,
+
             loader: ({ params }) =>
               fetch(
-                `https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/${lang}/${params.id}.json`
+                `https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/${params.id}.json`
               ),
           },
         ],
@@ -64,9 +42,7 @@ const routes = createBrowserRouter([
         path: "/about",
         element: (
           <PrivateRoutes>
-            <AnimatePresence mode="wait">
-              <SignleSurahBn />
-            </AnimatePresence>
+            <SignleSurahBn />
           </PrivateRoutes>
         ),
       },

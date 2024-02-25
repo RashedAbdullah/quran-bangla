@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Popover } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -76,7 +76,7 @@ export default function Header() {
   };
 
   return (
-    <div className="fixed w-full z-10">
+    <div className={`fixed w-full z-10`}>
       {/* Mobile menu */}
       <MobileMenu open={open} setOpen={setOpen} classNames={classNames} />
 

@@ -39,3 +39,7 @@
 .active {
   color: aqua;
 }
+
+.dark {
+  @apply bg-[#fafafa];
+}
