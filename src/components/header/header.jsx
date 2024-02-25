@@ -76,7 +76,7 @@ export default function Header() {
   };
 
   return (
-    <div className=" lg:fixed w-full z-10">
+    <div className="fixed w-full z-10">
       {/* Mobile menu */}
       <MobileMenu open={open} setOpen={setOpen} classNames={classNames} />
 
