@@ -7,7 +7,7 @@ const ReadingOrTranslation = ({ data }) => {
       dir="rtl"
       className="singleSurahDetails col-span-12 lg:col-span-8 font-hafs"
     >
-      <div className="mt-8 lg:text-2xl text-xl leading-10 px-20">
+      <div className="mt-8 lg:text-2xl text-xl leading-10 lg:px-20 px-10">
         {data.verses.map((ayah) => (
           <span className="" key={ayah.id}>
             <span>

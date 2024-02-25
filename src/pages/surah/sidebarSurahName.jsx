@@ -21,9 +21,8 @@ const SideBarSurahNames = () => {
     localStorage.setItem("isHide", JSON.stringify(isShowSidebar));
   }, [isShowSidebar]);
 
-  
   return (
-    <div className=" min-h-screen">
+    <div className=" min-h-screen lg:pt-2 pt-16">
       <div className=" fixed top-16 left-0 text-textWhite">
         <button
           onClick={() => setIsShowSidebar(true)}
