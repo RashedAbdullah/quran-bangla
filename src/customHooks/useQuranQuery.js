@@ -12,7 +12,7 @@ const useQuranQuery = () => {
         throw new Error("Failed to fetching data...");
       }
       const data = await response.json();
-      console.log(data);
+
       setQuran(data);
     } catch (err) {
       setError(err);

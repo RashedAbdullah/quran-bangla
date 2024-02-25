@@ -22,11 +22,11 @@ const SideBarSurahNames = () => {
       transition={{ duration: 1 }}
     >
       <div
-        className={` bg-primary top-20 ${
+        className={` bg-primary top-0 ${
           isShowSidebar
             ? "left-0"
             : " lg:translate-x-[-175px] translate-x-[-175px]"
-        } pt-5 rounded-l fixed max-h-screen top-0 left-0 w-62 overflow-auto transition duration-300 px-3 lg:pt-20`}
+        } pt-5 rounded-l fixed h-screen left-0 w-62 overflow-auto transition duration-300 px-3 lg:pt-20`}
       >
         {" "}
         <div className=" fixed left-[170px] text-textWhite">

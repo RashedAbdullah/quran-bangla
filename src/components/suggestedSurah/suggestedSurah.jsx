@@ -4,23 +4,28 @@ const SuggestedSurah = () => {
   const highestReadingSurahs = [
     {
       id: "55",
-      name: "আর রহমান",
+      name1: "আর",
+      name2: "রহমান",
     },
     {
       id: "18",
-      name: "আল কাহফ",
+      name1: "আল",
+      name2: "কাহফ",
     },
     {
       id: "36",
-      name: "ইয়াসিন",
+      name1: "ইয়াসিন",
+      name2: "",
     },
     {
       id: "56",
-      name: "আল ওয়াকিয়াহ",
+      name1: "আল",
+      name2: "ওয়াকিয়াহ",
     },
     {
       id: "67",
-      name: "আল মুলক",
+      name1: "আল",
+      name2: "মুলক",
     },
   ];
 
@@ -34,7 +39,10 @@ const SuggestedSurah = () => {
                 className="border flex gap-1 border-green-900 text-primaryHover rounded-full text-lg px-6 py-1 hover:bg-primary hover:text-textWhite transition hover:border-transparent"
                 to={`/singleSurah/${surah.id}`}
               >
-                <p className="">{surah.name}</p>
+                <div className="flex flex-nowrap">
+                  <p>{surah.name1}&nbsp;</p>
+                  <p>{surah.name2}</p>
+                </div>
               </NavLink>
             </li>
           ))}
