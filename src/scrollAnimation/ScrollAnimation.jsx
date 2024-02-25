@@ -14,7 +14,7 @@ const ScrollAnimation = () => {
     <div className="box">
       <motion.div
         style={{ transformOrigin: "left", scaleX, backgroundColor }}
-        className="scrollbar"
+        className="h-1 fixed bottom-1 left-0 w-full z-50"
       />
     </div>
   );

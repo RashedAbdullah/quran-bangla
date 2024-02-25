@@ -50,9 +50,9 @@ export default function Header() {
           className="flex items-center justify-center"
         >
           {isOn ? (
-            <MdNightlight color="#043333" />
-          ) : (
             <LuSunMoon color="#043333" />
+          ) : (
+            <MdNightlight color="#043333" />
           )}
         </motion.div>
       </motion.div>
