@@ -9,15 +9,25 @@ import UserProfile from "../auth/userProfile";
 import Reset from "./../auth/reset";
 import PrivateRoutes from "./privateRoutes";
 import SignleSurahBn from "./../pages/surah/singleSurahBn";
+import ThemeProvider from "../contexts/themeProvider";
+import About from "./../pages/about/about";
 
 const routes = createBrowserRouter([
   {
-    element: <Layout />,
+    element: (
+      <ThemeProvider>
+        <Layout />
+      </ThemeProvider>
+    ),
     errorElement: <h2>404 NOT FOUND</h2>,
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: (
+          <ThemeProvider>
+            <Home />
+          </ThemeProvider>
+        ),
       },
       {
         path: "/singleSurah",
@@ -42,7 +52,7 @@ const routes = createBrowserRouter([
         path: "/about",
         element: (
           <PrivateRoutes>
-            <SignleSurahBn />
+            <About />
           </PrivateRoutes>
         ),
       },

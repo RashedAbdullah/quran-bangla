@@ -7,8 +7,8 @@ const ReadingAndTraslatetile = ({ onTranslate, translate }) => {
         <div>
           <button
             onClick={() => onTranslate(false)}
-            className={`border border-primary py-1 px-10 text-xl hover:bg-primary hover:text-textWhite transition duration-300 ${
-              !translate && "bg-primaryHover text-textWhite"
+            className={`border border-primary py-1 px-10 text-xl hover:bg-primary hover:text-textWhite transition duration-300  ${
+              !translate && "bg-primaryHover dark:bg-slate-900  text-textWhite "
             }`}
             href=""
           >
@@ -19,7 +19,7 @@ const ReadingAndTraslatetile = ({ onTranslate, translate }) => {
           <button
             onClick={() => onTranslate(true)}
             className={`border border-primary py-1 px-10 text-xl hover:bg-primary hover:text-textWhite transition duration-300 ${
-              translate && "bg-primaryHover text-textWhite"
+              translate && "bg-primaryHover text-textWhite dark:bg-stone-900"
             }`}
             href=""
           >

@@ -1,6 +1,5 @@
 import Search from "../search/search";
 import { motion } from "framer-motion";
-import SearchSuggestions from "../searchSuggestions/searchSuggestions";
 import SuggestedSurah from "../suggestedSurah/suggestedSurah";
 
 const EntryMsg = () => {
@@ -11,7 +10,9 @@ const EntryMsg = () => {
     );
 
   return (
-    <div className="bg-[#043939] text-textWhite py-10 pb-6">
+    <div
+      className={`bg-primary dark:bg-gradient-to-br from-gray-50 to-gray-200 shadow-md dark:text-slate-900 text-textWhite py-10 pb-6`}
+    >
       <div className=" lg:w-[40vw] m-auto p-10">
         <h3 className="text-3xl lg:text-4xl">
           {title.map((word, index) => (

@@ -37,9 +37,9 @@
 @tailwind utilities;
 
 .active {
-  color: aqua;
+  color: #2d9596;
 }
 
 .dark {
-  @apply bg-[#fafafa];
+  @apply bg-gradient-to-r from-[#f1f1f1] to-[#f9f9f9] text-slate-900;
 }

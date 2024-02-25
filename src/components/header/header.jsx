@@ -14,6 +14,7 @@ import { LuSunMoon } from "react-icons/lu";
 import "./toggleDark.css";
 import { Avatar, Divider } from "@mui/material";
 import { signOut } from "firebase/auth";
+import { ThemeContext } from "../../contexts/themeProvider";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -23,7 +24,7 @@ export default function Header() {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
   const [open, setOpen] = useState(false);
-  const [isOn, setIsOn] = useState(true);
+  const { isOn, setIsOn } = useContext(ThemeContext);
 
   useEffect(() => {
     document.body.style.backgroundColor = isOn ? "#1c1c1c" : "#ffffff";
@@ -80,7 +81,13 @@ export default function Header() {
       {/* Mobile menu */}
       <MobileMenu open={open} setOpen={setOpen} classNames={classNames} />
 
-      <header className="relative bg-primaryHover text-white">
+      <header
+        className={`relative ${
+          !isOn
+            ? "backdrop-blur-md text-textBlack"
+            : "bg-primaryHover text-textWhite"
+        }  shadow-lg`}
+      >
         <nav
           aria-label="Top"
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
@@ -107,11 +114,14 @@ export default function Header() {
                       {user.photoURL ? (
                         <Avatar alt="user profile" src={user.photoURL} />
                       ) : (
-                        <FaUserAlt size={"25px"} />
+                        <FaUserAlt
+                          size={"25px"}
+                          color={isOn ? "black" : "white"}
+                        />
                       )}
                     </button>
                     {isShowUser && (
-                      <ul className=" absolute top-14 left-[145px] bg-primaryHover p-2 rounded">
+                      <ul className=" absolute top-14 left-[145px] bg-primaryHover p-2 rounded dark:bg-gradient-to-br from-gray-200 to-gray-50 shadow-md dark:text-slate-900">
                         <li>
                           <button onClick={hanldeProfile} className="py-2 px-1">
                             Profile
@@ -141,7 +151,7 @@ export default function Header() {
                     <NavLink
                       key={page.name}
                       to={page.navlink}
-                      className="flex items-center text-lg font-medium text-textWhite hover:text-gray-400"
+                      className={`flex items-center text-lg font-medium hover:text-gray-500`}
                     >
                       {page.name}
                     </NavLink>

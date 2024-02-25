@@ -29,10 +29,10 @@ const SideBarSurahNames = () => {
 
   return (
     <div className=" min-h-screen lg:pt-2 pt-16">
-      <div className=" fixed top-16 left-0 text-textWhite">
+      <div className=" fixed top-16 left-0">
         <button
           onClick={() => setIsShowSidebar(true)}
-          className="h-8 w-8 rounded-full bg-primaryHover flex items-center justify-center"
+          className="h-8 w-8 rounded-full bg-primaryHover dark:bg-gradient-to-br from-gray-200 to-gray-50 shadow-md dark:text-slate-900 dark:border border-gray-300 flex items-center justify-center text-white"
         >
           <MdOutlineKeyboardArrowRight size={"30px"} />
         </button>
@@ -40,14 +40,14 @@ const SideBarSurahNames = () => {
       <div
         className={` bg-primary top-0 ${
           isShowSidebar ? "left-0" : "translate-x-[-200px]"
-        } pt-5 rounded-l fixed h-screen left-0 w-62 overflow-auto transition duration-300 px-3 lg:pt-20`}
+        } pt-5 rounded-l fixed h-screen left-0 w-62 overflow-auto transition duration-300 px-3 lg:pt-20 dark:bg-gradient-to-br from-gray-200 to-gray-50 shadow-md dark:text-slate-900 text-textWhite`}
       >
-        <div className=" fixed top-20 left-[170px] text-textWhite">
+        <div className=" fixed top-20 left-[170px] text-textWhite dark:text-stone-900">
           <button onClick={() => setIsShowSidebar(false)}>
             <MdOutlineKeyboardArrowLeft size={"30px"} />
           </button>
         </div>{" "}
-        <form className="bg-textWhite flex align-middle w-40 m-auto rounded fixed top-20">
+        <form className="bg-textWhite flex align-middle justify-center w-36 px-2 m-auto rounded fixed top-20">
           <input
             className="bg-transparent outline-none p-1 w-[90%]"
             type="text"
@@ -57,10 +57,10 @@ const SideBarSurahNames = () => {
             <FiSearch />
           </button>
         </form>
-        <div className=" text-textWhite pt-24 lg:pt-10 pr-3">
+        <div className=" pt-24 lg:pt-10 pr-3">
           {data.map((name) => (
             <button
-              className="block py-2 px-1 border-b border-secondary hover:bg-primaryHover transition"
+              className=" w-full block py-2 px-1 border-b border-secondary dark:border-stone-900 hover:bg-primaryHover hover:text-textWhite transition"
               key={name.id}
               onClick={() => handleGoingToSurah(name.id)}
             >

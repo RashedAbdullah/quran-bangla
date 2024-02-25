@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className=" bg-primaryHover text-textWhite py-10 text-lg px-20">
+    <div className=" bg-primaryHover dark:bg-gradient-to-br from-gray-200 to-gray-50 shadow-md dark:text-slate-900 text-textWhite py-10 text-lg px-20">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 py-5">
         <ul className="">
           <li>

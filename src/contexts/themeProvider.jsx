@@ -1,11 +1,16 @@
 /* eslint-disable react/prop-types */
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { getThemeStorage } from "../localStorage/themeStorage";
 
 export const ThemeContext = createContext();
 const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(true);
+  const [isOn, setIsOn] = useState(getThemeStorage());
+
+  useEffect(() => {
+    localStorage.setItem("isDark", JSON.stringify(isOn));
+  }, [isOn]);
   return (
-    <ThemeContext.Provider value={{ isDark, setIsDark }}>
+    <ThemeContext.Provider value={{ isOn, setIsOn }}>
       {children}
     </ThemeContext.Provider>
   );

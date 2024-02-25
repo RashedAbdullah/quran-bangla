@@ -10,10 +10,10 @@ const NamesOfSurah = ({ quran }) => {
         <NavLink
           to={`/singleSurah/${surah.id}`}
           key={surah.id}
-          className="flex items-center justify-between px-5 py-6 text-xl rounded bg-primary text-white cursor-pointer transition ease-in-out hover:-translate-y-1 duration-300 hover:bg-primaryHover"
+          className="flex items-center justify-between px-5 py-6 text-xl rounded bg-primary text-white cursor-pointer transition ease-in-out hover:-translate-y-1 duration-300 hover:bg-primaryHover dark:bg-gradient-to-br from-gray-200 to-gray-50 shadow-md dark:text-slate-900"
         >
           <div className="flex align-middle items-center justify-center gap-5">
-            <div className="flex align-middle items-center bg-secondary rotate-45 rounded">
+            <div className="flex align-middle items-center bg-secondary dark:bg-transparent dark:border border-stone-400 rotate-45 rounded">
               <div className="h-10 w-10 flex items-center justify-center rotate-[-45deg]">
                 {getEngToBnNumber(surah.id)}
               </div>
