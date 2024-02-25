@@ -17,7 +17,7 @@ const Layout = () => {
       <Header />
       <ScrollRestoration />
       {navigation.state === "loading" ? (
-        <div className="flex h-screen justify-center align-middle">
+        <div className="flex h-screen justify-center align-middle mt-20">
           <Box sx={{ width: 300 }}>
             <Skeleton />
             <Skeleton animation="wave" />
