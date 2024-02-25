@@ -11,7 +11,7 @@ const EntryMsg = () => {
     );
 
   return (
-    <div className="bg-[#043939] text-textWhite lg:py-14 pb-6">
+    <div className="bg-[#043939] text-textWhite py-10 pb-6">
       <div className=" lg:w-[40vw] m-auto p-10">
         <h3 className="text-3xl lg:text-4xl">
           {title.map((word, index) => (
