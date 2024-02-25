@@ -5,9 +5,6 @@ import Loading from "../pages/loading/loading";
 
 const Layout = () => {
   const navigation = useNavigation();
-  if (navigation.state === "loading") {
-    console.log("I'm Loading");
-  }
 
   return (
     <div className="bg-secondary font-Siliguri selection:first-letter:bg-green-600 selection:bg-secondary selection:text-textWhite">

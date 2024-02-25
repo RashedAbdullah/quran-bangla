@@ -1,23 +1,30 @@
-const ReadingAndTraslatetile = () => {
+/* eslint-disable react/prop-types */
+const ReadingAndTraslatetile = ({ onTranslate, translate }) => {
   return (
     <>
       {" "}
       <div className="flex justify-center align-middle">
         <div>
-          <a
-            className="border border-primary py-1 px-10 text-xl hover:bg-primaryHover hover:text-textWhite transition duration-300"
+          <button
+            onClick={() => onTranslate(false)}
+            className={`border border-primary py-1 px-10 text-xl hover:bg-primary hover:text-textWhite transition duration-300 ${
+              !translate && "bg-primaryHover text-textWhite"
+            }`}
             href=""
           >
             পড়ুন
-          </a>
+          </button>
         </div>
         <div>
-          <a
-            className="border border-primary py-1 px-10 text-xl  hover:bg-primaryHover hover:text-textWhite transition duration-300"
+          <button
+            onClick={() => onTranslate(true)}
+            className={`border border-primary py-1 px-10 text-xl hover:bg-primary hover:text-textWhite transition duration-300 ${
+              translate && "bg-primaryHover text-textWhite"
+            }`}
             href=""
           >
             অনুবাদ
-          </a>
+          </button>
         </div>
       </div>
     </>

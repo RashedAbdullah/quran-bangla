@@ -23,6 +23,11 @@
   src: url("./assets/fonts/QCF_BSML.ttf");
 }
 
+@font-face {
+  font-family: Besmellah;
+  src: url("./assets/fonts/Besmellah.ttf");
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

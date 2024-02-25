@@ -1,6 +1,7 @@
 import Search from "../search/search";
 import { motion } from "framer-motion";
 import SearchSuggestions from "../searchSuggestions/searchSuggestions";
+import SuggestedSurah from "../suggestedSurah/suggestedSurah";
 
 const EntryMsg = () => {
   const title = "কুরআনের অঙ্গনে আপনাকে স্বাগতম".split(" ");
@@ -10,7 +11,7 @@ const EntryMsg = () => {
     );
 
   return (
-    <div className="bg-[#043939] text-textWhite lg:pt-14">
+    <div className="bg-[#043939] text-textWhite lg:py-14 pb-6">
       <div className=" lg:w-[40vw] m-auto p-10">
         <h3 className="text-3xl lg:text-4xl">
           {title.map((word, index) => (
@@ -40,7 +41,7 @@ const EntryMsg = () => {
         </div>
       </div>
       <Search />
-      {/* <SearchSuggestions /> */}
+      <SuggestedSurah />
     </div>
   );
 };

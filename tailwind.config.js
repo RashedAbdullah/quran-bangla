@@ -17,6 +17,7 @@ export default {
         me_quran: ["me_quran"],
         bsm: ["QCF_BSML"],
         Siliguri: ["Hind Siliguri"],
+        Besmellah: ["Besmellah"],
       },
     },
   },

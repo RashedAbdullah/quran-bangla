@@ -15,7 +15,7 @@ const Search = () => {
   };
   return (
     <div className="">
-      <div className="flex pb-10 text-textBlack">
+      <div className="flex pb-4 text-textBlack">
         <form className="m-auto bg-[#f0f0f0] rounded-full px-5 py-1 lg:w-[40vw] flex">
           <div className="w-full">
             <input

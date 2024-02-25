@@ -19,19 +19,19 @@ const SideBarSurahNames = () => {
   const [isShowSidebar, setIsShowSidebar] = useState(true);
 
   return (
-    <motion.div
+    <div
       className=" min-h-screen"
-      key="modal"
-      initial={{ x: "-5vh", opacity: 1 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 1 }}
+      // key="modal"
+      // initial={{ x: "-5vh", opacity: 1 }}
+      // animate={{ x: 0, opacity: 1 }}
+      // transition={{ duration: 1 }}
     >
       <div
         className={` bg-primary top-0 ${
           isShowSidebar
             ? "left-0"
             : " lg:translate-x-[-175px] translate-x-[-175px]"
-        } pt-5 rounded-l fixed lg:h-screen h-[88vh] left-0 w-62 overflow-auto transition duration-300 px-3 lg:pt-20`}
+        } pt-5 rounded-l fixed lg:h-screen h-[87vh] left-0 w-62 overflow-auto transition duration-300 px-3 lg:pt-20`}
       >
         {" "}
         <div className=" fixed left-[170px] text-textWhite">
@@ -67,7 +67,7 @@ const SideBarSurahNames = () => {
         </div>
       </div>
       {navigation.state === "loading" ? <Loading /> : <Outlet />}
-    </motion.div>
+    </div>
   );
 };
 

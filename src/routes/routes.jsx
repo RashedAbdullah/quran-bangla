@@ -11,6 +11,7 @@ import Reset from "./../auth/reset";
 import About from "./../pages/about/about";
 import PrivateRoutes from "./privateRoutes";
 import { AnimatePresence } from "framer-motion";
+import SignleSurahBn from "./../pages/surah/singleSurahBn";
 
 const lang = "bn";
 
@@ -64,7 +65,7 @@ const routes = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <AnimatePresence mode="wait">
-              <About />
+              <SignleSurahBn />
             </AnimatePresence>
           </PrivateRoutes>
         ),
