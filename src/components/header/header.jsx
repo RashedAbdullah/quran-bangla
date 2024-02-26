@@ -111,7 +111,7 @@ export default function Header() {
                       ) : (
                         <FaUserAlt
                           size={"25px"}
-                          color={isOn ? "black" : "white"}
+                          color={isOn ? "white" : "black"}
                         />
                       )}
                     </button>
