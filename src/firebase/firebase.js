@@ -25,10 +25,10 @@ const google = new GoogleAuthProvider();
 // Sign up:
 const signupWithEmailAndPassword = async (email, password) => {
   try {
-    const res = createUserWithEmailAndPassword(auth, email, password);
-    return res;
+    const response = createUserWithEmailAndPassword(auth, email, password);
+    return response;
   } catch (err) {
-    console.log(err);
+    console.log(err.message);
   }
 };
 

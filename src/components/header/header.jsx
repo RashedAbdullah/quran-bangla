@@ -121,13 +121,7 @@ export default function Header() {
                       )}
                     </button>
                     {isShowUser && (
-                      <ul className=" absolute top-14 left-[145px] bg-primaryHover p-2 rounded dark:bg-gradient-to-br from-gray-200 to-gray-50 shadow-md dark:text-slate-900">
-                        <li>
-                          <button onClick={hanldeProfile} className="py-2 px-1">
-                            Profile
-                          </button>
-                        </li>
-                        <Divider component="li" />
+                      <ul className=" absolute top-14 left-[140px] bg-primaryHover p-2 rounded dark:bg-gradient-to-br from-gray-200 to-gray-50 shadow-md dark:text-slate-900">
                         <li>
                           <button onClick={hanldeSignOut} className="py-2 px-1">
                             Sign out

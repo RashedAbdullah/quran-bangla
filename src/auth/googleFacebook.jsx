@@ -13,7 +13,7 @@ const GoogleFacebook = () => {
     }
   };
   return (
-    <div className=" mt-5 flex justify-center text-green-600 text-2xl gap-6">
+    <div className=" mt-5 flex justify-center text-teal-600 text-2xl gap-6">
       <div className="cursor-pointer">
         <button onClick={handleSignInWithGoogle}>
           <FaGoogle size="30px" />
