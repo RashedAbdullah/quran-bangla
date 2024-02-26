@@ -28,6 +28,17 @@ const SideBarSurahNames = () => {
     setIsShowSidebar(false);
   };
 
+  const [input, setInput] = useState("");
+  const [filtedInput, setFiltedInput] = useState([]);
+
+  const handleSearch = (e) => {
+    setInput(e.target.value);
+    const filtedData = data.filter((surah) =>
+      surah.transliteration.toLowerCase().includes(input.toLowerCase())
+    );
+    setFiltedInput(filtedData);
+  };
+
   return (
     <div className=" min-h-screen lg:pt-2 pt-16">
       <div className=" fixed top-16 left-0">
@@ -53,28 +64,43 @@ const SideBarSurahNames = () => {
             className="bg-transparent outline-none p-1 w-[90%]"
             type="text"
             placeholder="সুরা খুঁজুন"
+            value={input}
+            onChange={handleSearch}
           />
           <button>
             <FiSearch />
           </button>
         </form>
         <div className=" pt-24 lg:pt-10 pr-3">
-          {data.map((name) => (
-            <button
-              className=" w-full block py-2 px-1 border-b border-secondary dark:border-stone-900 hover:bg-primaryHover hover:text-textWhite transition"
-              key={name.id}
-              onClick={() => handleGoingToSurah(name.id)}
-            >
-              <div className="flex items-center gap-5 ">
-                <p className="text-1xl">{getEngToBnNumber(name.id)}</p>
-                <h3 className="text-1xl">{bnSurahNames[name.id]?.name}</h3>
-              </div>
-            </button>
-          ))}
+          {filtedInput.length && input
+            ? filtedInput.map((name) => (
+                <button
+                  className=" w-full block py-2 px-1 border-b border-secondary dark:border-stone-900 hover:bg-primaryHover hover:text-textWhite transition"
+                  key={name.id}
+                  onClick={() => handleGoingToSurah(name.id)}
+                >
+                  <div className="flex items-center gap-5 ">
+                    <p className="text-1xl">{getEngToBnNumber(name.id)}</p>
+                    <h3 className="text-1xl">{bnSurahNames[name.id]?.name}</h3>
+                  </div>
+                </button>
+              ))
+            : data.map((name) => (
+                <button
+                  className=" w-full block py-2 px-1 border-b border-secondary dark:border-stone-900 hover:bg-primaryHover hover:text-textWhite transition"
+                  key={name.id}
+                  onClick={() => handleGoingToSurah(name.id)}
+                >
+                  <div className="flex items-center gap-5 ">
+                    <p className="text-1xl">{getEngToBnNumber(name.id)}</p>
+                    <h3 className="text-1xl">{bnSurahNames[name.id]?.name}</h3>
+                  </div>
+                </button>
+              ))}
         </div>
       </div>
       {navigation.state === "loading" ? <Loading /> : <Outlet />}
-      <ScrollAnimation/>
+      <ScrollAnimation />
     </div>
   );
 };

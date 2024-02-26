@@ -71,11 +71,6 @@ export default function Header() {
     navigate("signin");
   };
 
-  const hanldeProfile = () => {
-    navigate("/user");
-    setIsShowUser(false);
-  };
-
   return (
     <div className={`fixed w-full z-10`}>
       {/* Mobile menu */}
