@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
-import { signOut } from "firebase/auth";
 import { useQuranQuery } from "../../customHooks/useQuranQuery";
 import { bnSurahNames } from "../../banglasurahNames/bnSurahNames";
 import { NavLink } from "react-router-dom";

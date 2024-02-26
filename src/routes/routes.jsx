@@ -5,12 +5,9 @@ import SideBarSurahNames from "../pages/surah/sidebarSurahName";
 import Layout from "../layouts/layout";
 import SignIn from "./../auth/signin";
 import SignUp from "../auth/signup";
-import UserProfile from "../auth/userProfile";
 import Reset from "./../auth/reset";
-import PrivateRoutes from "./privateRoutes";
-import SignleSurahBn from "./../pages/surah/singleSurahBn";
 import ThemeProvider from "../contexts/themeProvider";
-import About from "./../pages/about/about";
+import AllSurah from "../components/surahNames/allSurah";
 
 const routes = createBrowserRouter([
   {
@@ -49,16 +46,8 @@ const routes = createBrowserRouter([
         ],
       },
       {
-        path: "/about",
-        element: (
-          <PrivateRoutes>
-            <About />
-          </PrivateRoutes>
-        ),
-      },
-      {
-        path: "/user",
-        element: <UserProfile />,
+        path: "/allSurah",
+        element: <AllSurah />,
       },
     ],
   },
