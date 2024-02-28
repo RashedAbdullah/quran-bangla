@@ -12,7 +12,7 @@ const ReadingAndTraslatetile = ({ onTranslate, translate }) => {
             }`}
             href=""
           >
-            পড়ুন
+            তিলাওয়াত
           </button>
         </div>
         <div>
@@ -23,7 +23,7 @@ const ReadingAndTraslatetile = ({ onTranslate, translate }) => {
             }`}
             href=""
           >
-            অনুবাদ
+            তরজমা
           </button>
         </div>
       </div>
