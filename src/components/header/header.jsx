@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { MdNightlight } from "react-icons/md";
 import { LuSunMoon } from "react-icons/lu";
 import "./toggleDark.css";
-import { Avatar, Divider } from "@mui/material";
+import { Avatar } from "@mui/material";
 import { signOut } from "firebase/auth";
 import { ThemeContext } from "../../contexts/themeProvider";
 
